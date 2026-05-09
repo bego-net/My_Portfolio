@@ -43,43 +43,44 @@ const Services = () => {
   ]
 
   return (
-    <Section title="Services" subtitle="What I offer">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -10 }}
-              className="relative p-8 rounded-2xl bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 shadow-xl hover:shadow-2xl transition-all duration-300 group overflow-hidden"
-            >
-              {/* Background Gradient Glow */}
-              <div className={`absolute -right-10 -top-10 w-32 h-32 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 blur-3xl transition-opacity duration-500`} />
-              
-              <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center text-white mb-6 shadow-lg transform group-hover:rotate-6 transition-transform duration-300`}>
-                <service.icon size={28} />
+    <Section title="Expertise" subtitle="Services">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map((service, index) => (
+          <motion.div
+            key={service.title}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            className="group relative p-1 rounded-3xl bg-gradient-to-br from-transparent to-transparent hover:from-primary-500/20 hover:to-purple-500/20 transition-all duration-500"
+          >
+            <div className="relative h-full glass p-8 rounded-[22px] overflow-hidden">
+              {/* Icon with animated background */}
+              <div className="relative z-10 mb-8">
+                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center text-white shadow-lg shadow-black/5 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
+                  <service.icon size={28} />
+                </div>
               </div>
 
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
-                {service.title}
-              </h3>
-              
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
-                {service.description}
-              </p>
-
-              <div className="mt-6 flex items-center text-primary-500 font-semibold text-sm cursor-pointer group/link">
-                <span>Learn more</span>
-                <svg className="w-4 h-4 ml-2 group-hover/link:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="9 5l7 7-7 7" />
-                </svg>
+              <div className="relative z-10">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-primary-500 transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6">
+                  {service.description}
+                </p>
+                
+                <div className="flex items-center gap-2 text-xs font-bold text-primary-500 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
+                  <span>Learn Project Details</span>
+                  <FiArrowRight />
+                </div>
               </div>
-            </motion.div>
-          ))}
-        </div>
+
+              {/* Decorative background element */}
+              <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-primary-500/5 rounded-full blur-2xl group-hover:bg-primary-500/10 transition-all duration-500" />
+            </div>
+          </motion.div>
+        ))}
       </div>
     </Section>
   )

@@ -106,90 +106,70 @@ const Projects = () => {
   }
 
   return (
-    <Section title="Projects" subtitle="Some of my recent work">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl overflow-hidden transition-shadow flex flex-col"
-            >
-              <div className="p-6 flex-1 flex flex-col">
-                <div className="flex items-start justify-between mb-3">
-                  <div className="flex-1">
-                    <div className="flex items-center space-x-2 mb-2">
-                      <FiCode className="text-primary-500" size={20} />
-                      <span
-                        className={`px-2 py-1 rounded text-xs font-semibold ${getCategoryColor(
-                          project.category
-                        )}`}
-                      >
-                        {project.category}
-                      </span>
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                      {project.title}
-                    </h3>
-                  </div>
-                </div>
-
-                <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 flex-1">
-                  {project.description}
-                </p>
-
-                <div className="mb-4">
-                  <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-2">
-                    Technologies:
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech) => (
-                      <div
-                        key={tech.name}
-                        className="flex items-center space-x-1 px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded text-xs text-gray-700 dark:text-gray-300"
-                      >
-                        {tech.icon && <tech.icon size={14} />}
-                        <span>{tech.name}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="flex items-center space-x-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-                  <motion.a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    className="flex items-center space-x-2 text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
-                  >
-                    <FiGithub size={18} />
-                    <span className="text-sm font-medium">Code</span>
-                  </motion.a>
-
-                  {project.demo && (
-                    <motion.a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="flex items-center space-x-2 text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
-                    >
-                      <FiExternalLink size={18} />
-                      <span className="text-sm font-medium">Demo</span>
-                    </motion.a>
-                  )}
-                </div>
+    <Section title="Featured Work" subtitle="Projects">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {projects.map((project, index) => (
+          <motion.div
+            key={project.title}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            className="group glass-card rounded-[2rem] overflow-hidden flex flex-col h-full border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800"
+          >
+            {/* Project Image Placeholder / Visual */}
+            <div className="relative aspect-video overflow-hidden bg-gray-100 dark:bg-gray-800">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-500/20 to-purple-600/20 group-hover:scale-110 transition-transform duration-700" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <FiCode size={40} className="text-gray-400 opacity-20" />
               </div>
-            </motion.div>
-          ))}
-        </div>
+              {/* Category Badge */}
+              <div className="absolute top-4 left-4 px-3 py-1 rounded-full glass text-[10px] font-bold uppercase tracking-widest text-primary-500 border border-primary-500/20 bg-white/80 dark:bg-black/50">
+                {project.category}
+              </div>
+            </div>
+
+            <div className="p-8 flex flex-col flex-grow">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary-500 transition-colors">
+                {project.title}
+              </h3>
+              <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
+                {project.description}
+              </p>
+
+              {/* Tags */}
+              <div className="flex flex-wrap gap-2 mb-8">
+                {project.tags.map((tag) => (
+                  <span key={tag} className="text-[10px] font-bold px-2 py-1 rounded-md bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 uppercase tracking-tighter">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex items-center gap-4 mt-auto">
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex-1 h-11 rounded-xl border border-gray-200 dark:border-gray-700 flex items-center justify-center gap-2 text-xs font-bold text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all"
+                >
+                  <FiGithub size={16} />
+                  <span>Code</span>
+                </a>
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex-1 h-11 rounded-xl bg-primary-500 hover:bg-primary-600 flex items-center justify-center gap-2 text-xs font-bold text-white shadow-lg shadow-primary-500/20 transition-all"
+                >
+                  <FiExternalLink size={16} />
+                  <span>Live Demo</span>
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </Section>
   )

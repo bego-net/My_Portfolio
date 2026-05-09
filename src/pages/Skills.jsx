@@ -196,23 +196,13 @@ const backendConcepts = [
       description:
         "Assessing performance using metrics and cross-validation.",
     },
-    {
-      step: 6,
-      title: "Model Deployment",
-      description:
-        "Deploying models for production and monitoring performance.",
-    },
-  ]
-
-  return (
     <Section
-      title="Skills"
-      subtitle="Technical stack and ML expertise"
+      title="Tech Stack"
+      subtitle="Skills & Expertise"
     >
-      <div className="max-w-6xl mx-auto space-y-20">
-
-        {/* ================= TECH SKILLS ================= */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="space-y-16">
+        {/* Top Level Categories */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.title}
@@ -220,207 +210,91 @@ const backendConcepts = [
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
-              whileHover={{ y: -5 }}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl p-6 transition-shadow"
+              className="glass p-8 rounded-3xl"
             >
-              <div className="flex items-center space-x-3 mb-6">
-                <span className="text-3xl">{category.icon}</span>
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-12 h-12 rounded-2xl bg-primary-500/10 flex items-center justify-center text-2xl">
+                  {category.icon}
+                </div>
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white">
                   {category.title}
                 </h3>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-6">
                 {category.skills.map((skill, skillIndex) => (
-                  <motion.div
-                    key={skill.name}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      duration: 0.3,
-                      delay: categoryIndex * 0.1 + skillIndex * 0.05,
-                    }}
-                  >
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="flex items-center space-x-2">
-                        {skill.icon && (
-                          <skill.icon
-                            className="text-gray-700 dark:text-gray-300"
-                            size={20}
-                          />
-                        )}
-                        <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                  <div key={skill.name} className="group">
+                    <div className="flex justify-between items-end mb-2">
+                      <div className="flex items-center gap-2">
+                        {skill.icon && <skill.icon className="text-primary-500" size={16} />}
+                        <span className="text-sm font-semibold text-gray-700 dark:text-gray-300 group-hover:text-primary-500 transition-colors">
                           {skill.name}
                         </span>
                       </div>
-                      <span className="text-xs text-gray-500 dark:text-gray-400">
+                      <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
                         {skill.level}%
                       </span>
                     </div>
-
-                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                    <div className="h-1.5 w-full bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
                         viewport={{ once: true }}
-                        transition={{ duration: 1 }}
-                        className="bg-gradient-to-r from-primary-500 to-purple-600 h-2 rounded-full"
+                        transition={{ duration: 1, delay: 0.5 + (skillIndex * 0.1) }}
+                        className="h-full bg-gradient-to-r from-primary-500 to-purple-500 rounded-full"
                       />
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* ================= ML CONCEPTS ================= */}
-        <div>
-          <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-10">
-            Machine Learning Expertise
-          </h3>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {mlConcepts.map((concept, index) => {
-              const Icon = concept.icon
-              return (
+        {/* Specialized Areas */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* ML Expertise */}
+          <div className="space-y-8">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-3">
+              <span className="w-8 h-[2px] bg-primary-500 rounded-full" />
+              Machine Learning
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {mlConcepts.map((concept, i) => (
                 <motion.div
                   key={concept.title}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
-                  className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg"
+                  whileHover={{ y: -5 }}
+                  className="p-5 rounded-2xl glass-card"
                 >
-                  <div className="flex items-start space-x-4">
-                    <div className="p-3 bg-primary-100 dark:bg-primary-900 rounded-lg">
-                      <Icon
-                        className="text-primary-600 dark:text-primary-400"
-                        size={24}
-                      />
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                        {concept.title}
-                      </h4>
-                      <p className="text-gray-600 dark:text-gray-300 text-sm">
-                        {concept.description}
-                      </p>
-                    </div>
-                  </div>
+                  <concept.icon className="text-primary-500 mb-3" size={20} />
+                  <h4 className="font-bold text-sm text-gray-900 dark:text-white mb-1">{concept.title}</h4>
+                  <p className="text-[11px] text-gray-500 dark:text-gray-400 line-clamp-2">{concept.description}</p>
                 </motion.div>
-              )
-            })}
-          </div>
-        </div>
-         
-         {/* ================= BACKEND EXPERTISE ================= */}
-<div>
-  <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-10">
-    Backend Expertise
-  </h3>
-
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-    {backendConcepts.map((concept, index) => {
-      const Icon = concept.icon
-      return (
-        <motion.div
-          key={concept.title}
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.3, delay: index * 0.1 }}
-          className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg"
-        >
-          <div className="flex items-start space-x-4">
-            <div className="p-3 bg-primary-100 dark:bg-primary-900 rounded-lg">
-              <Icon
-                className="text-primary-600 dark:text-primary-400"
-                size={24}
-              />
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                {concept.title}
-              </h4>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">
-                {concept.description}
-              </p>
+              ))}
             </div>
           </div>
-        </motion.div>
-      )
-    })}
-  </div>
-</div>
-        {/* ================= ALGORITHMS ================= */}
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-            Algorithms & Techniques
-          </h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            {algorithms.map((algorithm) => (
-              <div
-                key={algorithm}
-                className="flex items-center space-x-2 text-gray-700 dark:text-gray-300"
-              >
-                <div className="w-2 h-2 bg-primary-500 rounded-full" />
-                <span>{algorithm}</span>
-              </div>
-            ))}
+          {/* Backend Expertise */}
+          <div className="space-y-8">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-3">
+              <span className="w-8 h-[2px] bg-purple-500 rounded-full" />
+              Backend Architecture
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {backendConcepts.map((concept, i) => (
+                <motion.div
+                  key={concept.title}
+                  whileHover={{ y: -5 }}
+                  className="p-5 rounded-2xl glass-card"
+                >
+                  <concept.icon className="text-purple-500 mb-3" size={20} />
+                  <h4 className="font-bold text-sm text-gray-900 dark:text-white mb-1">{concept.title}</h4>
+                  <p className="text-[11px] text-gray-500 dark:text-gray-400 line-clamp-2">{concept.description}</p>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
-
-        {/* ================= DATASETS ================= */}
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-            Datasets Handled
-          </h3>
-
-          <div className="space-y-3">
-            {datasets.map((dataset) => (
-              <div
-                key={dataset}
-                className="flex items-center space-x-3 text-gray-700 dark:text-gray-300"
-              >
-                <FiDatabase className="text-primary-500" size={18} />
-                <span>{dataset}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* ================= WORKFLOW ================= */}
-        <div>
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
-            Machine Learning Workflow
-          </h3>
-
-          <div className="space-y-4">
-            {workflow.map((item) => (
-              <div
-                key={item.step}
-                className="flex items-start space-x-4 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6"
-              >
-                <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-primary-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold">
-                  {item.step}
-                </div>
-
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                    {item.title}
-                  </h4>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
       </div>
     </Section>
   )
