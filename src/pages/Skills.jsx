@@ -206,7 +206,6 @@ const backendConcepts = [
 
   return (
     <Section
-      id="skills"
       title="Skills"
       subtitle="Technical stack and ML expertise"
     >

@@ -15,7 +15,6 @@ import {
 const Resume = () => {
   return (
     <Section
-      id="resume"
       title="Resume"
       subtitle="Software Engineering, Backend & Machine Learning Experience"
     >

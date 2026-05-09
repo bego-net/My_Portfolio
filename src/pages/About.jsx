@@ -27,7 +27,7 @@ const About = () => {
   ]
 
   return (
-    <Section id="about" title="About Me" subtitle="Get to know me">
+    <Section title="About Me" subtitle="Get to know me">
       <div className="max-w-4xl mx-auto">
         {/* Professional Summary */}
         <motion.div
