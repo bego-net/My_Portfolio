@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import Section from '../components/Section'
-import { FiCode, FiServer, FiLayout, FiActivity, FiLayers, FiShield } from 'react-icons/fi'
+import { FiCode, FiServer, FiLayout, FiActivity, FiLayers, FiShield, FiArrowRight } from 'react-icons/fi'
 
 const Services = () => {
   const services = [

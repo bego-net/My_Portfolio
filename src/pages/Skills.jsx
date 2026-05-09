@@ -115,34 +115,34 @@ const Skills = () => {
 
   /* ================================
       BACKEND EXPERTISE CONTENT
-================================= */
+  ================================= */
 
-const backendConcepts = [
-  {
-    title: "API Development",
-    description:
-      "Building RESTful APIs using Node.js, Express, and Laravel with proper routing, middleware, and controller structure.",
-    icon: FiCode,
-  },
-  {
-    title: "Authentication & Authorization",
-    description:
-      "Implementing secure authentication systems using JWT, session-based authentication, and role-based access control.",
-    icon: FaBrain,
-  },
-  {
-    title: "Database Design & Optimization",
-    description:
-      "Designing relational and NoSQL databases, writing optimized queries, indexing, and managing migrations.",
-    icon: FiDatabase,
-  },
-  {
-    title: "Server Deployment & DevOps",
-    description:
-      "Deploying backend applications using Docker, configuring servers, environment variables, and production builds.",
-    icon: FiTrendingUp,
-  },
-]
+  const backendConcepts = [
+    {
+      title: "API Development",
+      description:
+        "Building RESTful APIs using Node.js, Express, and Laravel with proper routing, middleware, and controller structure.",
+      icon: FiCode,
+    },
+    {
+      title: "Authentication & Authorization",
+      description:
+        "Implementing secure authentication systems using JWT, session-based authentication, and role-based access control.",
+      icon: FaBrain,
+    },
+    {
+      title: "Database Design & Optimization",
+      description:
+        "Designing relational and NoSQL databases, writing optimized queries, indexing, and managing migrations.",
+      icon: FiDatabase,
+    },
+    {
+      title: "Server Deployment & DevOps",
+      description:
+        "Deploying backend applications using Docker, configuring servers, environment variables, and production builds.",
+      icon: FiTrendingUp,
+    },
+  ]
 
   const algorithms = [
     "Linear & Logistic Regression",
@@ -196,6 +196,9 @@ const backendConcepts = [
       description:
         "Assessing performance using metrics and cross-validation.",
     },
+  ]
+
+  return (
     <Section
       title="Tech Stack"
       subtitle="Skills & Expertise"
@@ -203,7 +206,7 @@ const backendConcepts = [
       <div className="space-y-16">
         {/* Top Level Categories */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {skillCategories.map((category, categoryIndex) => (
+          {skillCategories?.map((category, categoryIndex) => (
             <motion.div
               key={category.title}
               initial={{ opacity: 0, y: 20 }}
@@ -222,7 +225,7 @@ const backendConcepts = [
               </div>
 
               <div className="space-y-6">
-                {category.skills.map((skill, skillIndex) => (
+                {category.skills?.map((skill, skillIndex) => (
                   <div key={skill.name} className="group">
                     <div className="flex justify-between items-end mb-2">
                       <div className="flex items-center gap-2">
@@ -260,7 +263,7 @@ const backendConcepts = [
               Machine Learning
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {mlConcepts.map((concept, i) => (
+              {mlConcepts?.map((concept, i) => (
                 <motion.div
                   key={concept.title}
                   whileHover={{ y: -5 }}
@@ -281,7 +284,7 @@ const backendConcepts = [
               Backend Architecture
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {backendConcepts.map((concept, i) => (
+              {backendConcepts?.map((concept, i) => (
                 <motion.div
                   key={concept.title}
                   whileHover={{ y: -5 }}

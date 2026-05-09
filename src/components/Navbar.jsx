@@ -26,7 +26,7 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20)
-      
+
       const sectionIds = navLinks.map((l) => l.id)
       const offsets = sectionIds.map((id) => {
         const el = document.getElementById(id)
@@ -70,22 +70,20 @@ const Navbar = () => {
   }, [isMenuOpen])
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      scrolled ? 'py-4' : 'py-6'
-    }`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'py-4' : 'py-6'
+      }`}>
       <div className="container mx-auto px-4 md:px-8">
-        <div className={`relative flex items-center justify-between px-6 py-3 rounded-2xl transition-all duration-500 ${
-          scrolled ? 'glass shadow-2xl border-white/20' : 'bg-transparent border-transparent'
-        }`}>
+        <div className={`relative flex items-center justify-between px-6 py-3 rounded-2xl transition-all duration-500 ${scrolled ? 'glass shadow-2xl border-white/20' : 'bg-transparent border-transparent'
+          }`}>
           {/* Logo */}
-          <div 
+          <div
             className="flex items-center gap-2 cursor-pointer group"
             onClick={() => scrollToSection('hero')}
           >
             <div className="w-10 h-10 rounded-xl bg-primary-500 flex items-center justify-center text-white shadow-lg shadow-primary-500/20 transform group-hover:rotate-12 transition-transform">
               <span className="text-xl font-black">B</span>
             </div>
-            <span className="hidden sm:block font-bold text-gray-900 dark:text-white tracking-tight">DEBEBE</span>
+            <span className="hidden sm:block font-bold text-gray-900 dark:text-white tracking-tight">BEGONET</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -94,11 +92,10 @@ const Navbar = () => {
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className={`relative px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-widest transition-all ${
-                  activeSection === link.id 
-                  ? 'text-primary-500' 
+                className={`relative px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-widest transition-all ${activeSection === link.id
+                  ? 'text-primary-500'
                   : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
-                }`}
+                  }`}
               >
                 {activeSection === link.id && (
                   <motion.div
@@ -161,11 +158,10 @@ const Navbar = () => {
                 <button
                   key={link.id}
                   onClick={() => scrollToSection(link.id)}
-                  className={`px-6 py-4 rounded-2xl text-lg font-bold uppercase tracking-widest text-left transition-all ${
-                    activeSection === link.id 
-                    ? 'bg-primary-500 text-white shadow-xl shadow-primary-500/20' 
+                  className={`px-6 py-4 rounded-2xl text-lg font-bold uppercase tracking-widest text-left transition-all ${activeSection === link.id
+                    ? 'bg-primary-500 text-white shadow-xl shadow-primary-500/20'
                     : 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800'
-                  }`}
+                    }`}
                 >
                   {link.label}
                 </button>

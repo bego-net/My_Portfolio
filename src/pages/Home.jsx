@@ -99,13 +99,13 @@ const Home = () => {
 
           <motion.div variants={itemVariants} className="space-y-4">
             <h2 className="text-primary-500 dark:text-primary-400 font-mono tracking-widest text-sm md:text-base font-semibold uppercase">
-              // Software Engineer Portfolio
+              // Software Engineer
             </h2>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-gray-900 dark:text-white leading-[1.1]">
               Crafting <span className="gradient-text">Digital</span> <br />
               <span className="relative inline-block mt-2">
                 Experiences
-                <motion.div 
+                <motion.div
                   initial={{ width: 0 }}
                   animate={{ width: '100%' }}
                   transition={{ delay: 0.8, duration: 1 }}
@@ -119,7 +119,7 @@ const Home = () => {
             variants={itemVariants}
             className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mt-10 mb-12 max-w-2xl mx-auto leading-relaxed"
           >
-            I'm <span className="font-bold text-gray-900 dark:text-white">Begonet Debebe</span>, a Backend Specialist & ML Engineer 
+            I'm <span className="font-bold text-gray-900 dark:text-white">Begonet Debebe</span>, a Backend Specialist & ML Engineer
             focused on building high-performance, intelligent systems that scale.
           </motion.p>
 

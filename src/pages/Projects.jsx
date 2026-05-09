@@ -137,11 +137,11 @@ const Projects = () => {
                 {project.description}
               </p>
 
-              {/* Tags */}
+              {/* Technologies */}
               <div className="flex flex-wrap gap-2 mb-8">
-                {project.tags.map((tag) => (
-                  <span key={tag} className="text-[10px] font-bold px-2 py-1 rounded-md bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 uppercase tracking-tighter">
-                    {tag}
+                {project.technologies?.map((tech) => (
+                  <span key={tech.name} className="text-[10px] font-bold px-2 py-1 rounded-md bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 uppercase tracking-tighter">
+                    {tech.name}
                   </span>
                 ))}
               </div>

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import Section from "../components/Section"
+import Button from '../components/Button'
 import {
   FiMail,
   FiPhone,
