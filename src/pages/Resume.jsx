@@ -89,18 +89,33 @@ const Resume = () => {
             </div>
             
             <div className="pt-6">
-              <Button variant="primary" className="w-full h-12 rounded-xl text-sm font-bold shadow-lg shadow-primary-500/20">
-                <FiDownload className="mr-2" />
-                Download CV
-              </Button>
+              <a 
+                href="/Begonet-Debebe-CV.pdf" 
+                download="Begonet-Debebe-CV.pdf"
+                className="block"
+              >
+                <Button variant="primary" className="w-full h-12 rounded-xl text-sm font-bold shadow-lg shadow-primary-500/20">
+                  <FiDownload className="mr-2" />
+                  Download CV
+                </Button>
+              </a>
             </div>
           </div>
 
           {/* Social Presence */}
           <div className="flex gap-3">
-            {[FiGithub, FiLinkedin].map((Icon, i) => (
-              <a key={i} href="#" className="flex-1 h-12 rounded-xl border border-gray-200 dark:border-gray-800 flex items-center justify-center text-gray-500 hover:text-primary-500 hover:border-primary-500 transition-all">
-                <Icon size={18} />
+            {[
+              { Icon: FiGithub, href: 'https://github.com/bego-net' },
+              { Icon: FiLinkedin, href: 'https://www.linkedin.com/in/begonet-d-b69b6536a' },
+            ].map((social, i) => (
+              <a 
+                key={i} 
+                href={social.href} 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 h-12 rounded-xl border border-gray-200 dark:border-gray-800 flex items-center justify-center text-gray-500 hover:text-primary-500 hover:border-primary-500 transition-all"
+              >
+                <social.Icon size={18} />
               </a>
             ))}
           </div>

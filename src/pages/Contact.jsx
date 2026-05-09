@@ -61,7 +61,8 @@ const Contact = () => {
 
   const socialLinks = [
     { icon: FiGithub, href: 'https://github.com/bego-net', label: 'GitHub' },
-    { icon: FiLinkedin, href: 'https://linkedin.com/in/begonet-debebe-798220303', label: 'LinkedIn' },
+    { icon: FiLinkedin, href: 'https://www.linkedin.com/in/begonet-d-b69b6536a', label: 'LinkedIn' },
+    { icon: FiArrowRight, href: 'https://x.com/BegonetDebebe', label: 'X' },
   ]
 
   return (

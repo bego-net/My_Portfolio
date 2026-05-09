@@ -42,7 +42,7 @@ const About = () => {
               I am a passionate <span className="text-primary-500 font-bold">Full-Stack Developer</span> specializing in backend architecture and machine learning.
             </p>
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              With over 3 years of academic and project experience, I thrive on building scalable web applications and intelligent systems. 
+              With over 3 years of academic and project experience, I thrive on building scalable web applications and intelligent systems.
               My journey in tech is driven by a deep curiosity for how complex systems work and a commitment to writing clean, maintainable code.
             </p>
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -54,8 +54,8 @@ const About = () => {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 pt-4">
             {[
               { label: 'Experience', value: '3+ Years' },
-              { label: 'Projects', value: '15+' },
-              { label: 'Clients', value: '5+' },
+              { label: 'Projects', value: '10+' },
+              { label: 'Clients', value: '2+' },
             ].map((stat) => (
               <div key={stat.label} className="p-4 rounded-2xl glass-card">
                 <p className="text-2xl font-bold text-gray-900 dark:text-white mb-1">{stat.value}</p>

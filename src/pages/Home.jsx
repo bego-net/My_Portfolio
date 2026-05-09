@@ -142,15 +142,21 @@ const Home = () => {
             variants={itemVariants}
             className="mt-16 flex items-center justify-center gap-6"
           >
-            {['Github', 'LinkedIn', 'Twitter'].map((social, i) => (
+            {[
+              { label: 'Github', href: 'https://github.com/bego-net' },
+              { label: 'LinkedIn', href: 'https://www.linkedin.com/in/begonet-d-b69b6536a' },
+              { label: 'X', href: 'https://x.com/BegonetDebebe' },
+            ].map((social, i) => (
               <motion.a
-                key={social}
-                href="#"
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ y: -5, scale: 1.1 }}
                 className="text-gray-400 hover:text-primary-500 transition-colors text-sm font-medium tracking-widest uppercase flex items-center gap-2"
               >
                 <span className="w-8 h-[1px] bg-gray-300 dark:bg-gray-800" />
-                {social}
+                {social.label}
               </motion.a>
             ))}
           </motion.div>
