@@ -80,8 +80,8 @@ const Navbar = () => {
             className="flex items-center gap-2 cursor-pointer group"
             onClick={() => scrollToSection('hero')}
           >
-            <div className="w-10 h-10 rounded-xl bg-primary-500 flex items-center justify-center text-white shadow-lg shadow-primary-500/20 transform group-hover:rotate-12 transition-transform">
-              <span className="text-xl font-black">B</span>
+            <div className="w-10 h-10 rounded-xl overflow-hidden shadow-lg shadow-primary-500/20 transform group-hover:rotate-12 transition-transform border-2 border-primary-500/20">
+              <img src={profile} alt="Begonet" className="w-full h-full object-cover" />
             </div>
             <span className="hidden sm:block font-bold text-gray-900 dark:text-white tracking-tight">BEGONET</span>
           </div>
